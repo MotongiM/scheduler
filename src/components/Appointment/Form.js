@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import Button from 'components/Button';
 import InterviewerList from 'components/InterviewerList';
 
@@ -15,7 +15,6 @@ function cancel() {
     props.onCancel();
 }
 return (
-    <Fragment>
         <main className="appointment__card appointment__card--create">
         <section className="appointment__card-left">
             <form autoComplete="off" onSubmit={event => event.preventDefault()}>
@@ -43,6 +42,5 @@ return (
             </section>
         </section>
         </main>
-    </Fragment>
     )
 }
