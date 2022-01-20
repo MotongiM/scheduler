@@ -55,8 +55,8 @@ const appointments = [
     }
   },
   {
-    id: 5,
-    time: "4pm",
+    id: "last",
+    time: "5pm",
   }
 ];
 
@@ -86,9 +86,9 @@ export default function Application(props) {
         {/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
       </section>
       <section className="schedule">
-        {appointments}
+        {appointments.map((appointment) =>
         <Appointment key={appointment.id} {...appointment} />
-        <Appointment key="last" time="5pm" />
+        )}
       </section>
     </main>
   );
