@@ -3,6 +3,7 @@ import axios from "axios";
 import DayList from "./DayList";
 import "components/Application.scss";
 import Appointment from "components/Appointment";
+import { getAppointmentsForDay } from "helpers/selectors";
 
 const days = [
   {
@@ -62,7 +63,13 @@ const appointments = [
 ];
 
 export default function Application(props) {
-  const [day,setDay] = useState("Monday")
+  const [day,setDay] = useState([]);
+  useEffect(() => {
+  const testUrl = "http://localhost:8000"
+  axios.get(testUrl).then(response => {
+    setDay([day])
+  })
+}, [])
   return (
     <main className="layout">
         <section className="sidebar">
