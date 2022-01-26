@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function useApplicationData() {
-  // -- state object
   const [state, setState] = useState({
     day: "Monday",
     days: [],
@@ -77,10 +76,10 @@ export default function useApplicationData() {
     });
   }
 
-  // -- used to set the current day
+ 
   const setDay = day => setState({ ...state, day });
 
-  // -- effect method; requests to API server to fetch state data
+
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
