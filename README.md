@@ -12,7 +12,7 @@ When the user loads the App, he can choose a date and an hour to get an Intervie
 !["create_edit"](https://github.com/MotongiM/scheduler/blob/master/public/images/App.gif)
 
 
-If an error does occure while making an creating/deleting or editing an interview, they will see this error below.
+If an error does occure while making an deleting or editing an interview, they will see this error below.
 
 !["Error"](https://github.com/MotongiM/scheduler/blob/master/public/images/Deleting_editing_Errors.gif)
 ## Setup
