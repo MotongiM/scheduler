@@ -7,6 +7,7 @@
     "axios": "^0.25.0",
     "classnames": "^2.2.6",
     "hooks": "^0.3.2",
+    "jest-dom": "^4.0.0",
     "normalize.css": "^8.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
