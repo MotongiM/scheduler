@@ -8,11 +8,25 @@ const [interviewer, setInterviewer] = useState(props.interviewer || null);
 const [error, setError] = useState("");
 function reset() {
     setStudent("") 
+    setError("")
     setInterviewer(null)
 }
 function cancel() {
     reset();
     props.onCancel();
+}
+
+ function validate() {
+    if (student === "") {
+      setError("Student name cannot be blank");
+      return;
+    }
+    if (!interviewer) { 
+      setError('Must select an interviewer') 
+      return;
+    }
+    setError("")
+    props.onSave(student, interviewer);
 }
 return (
         <main className="appointment__card appointment__card--create">
@@ -38,7 +52,7 @@ return (
         <section className="appointment__card-right">
             <section className="appointment__actions">
                 <Button danger onClick={event => cancel()}>Cancel</Button>
-                <Button confirm onClick={props.onSave}>Save</Button>
+                <Button confirm onClick={{validate}}>Save</Button>
             </section>
         </section>
         </main>
