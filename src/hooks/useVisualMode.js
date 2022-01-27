@@ -10,18 +10,11 @@ export default function useVisualMode(initial) {
 
   // allows to transition to a new mode
   const transition = (newMode, replace = false) => {
-    if (replace) {
-      setMode((prev) => newMode)
-      let replaceHistory = [...history];
-      replaceHistory[replaceHistory.length - 1] = mode;
-      setHistory((prev) => replaceHistory);
-    } else {
-      setMode((prev) => newMode);
-      let newHistory = [...history];
-      newHistory.push(newMode);
-      setHistory((prev) => newHistory);
+    if (!replace) {
+      setHistory((prev) => [...prev, newMode]);
     }
-  };
+    setMode(newMode);
+  }
 
   // allows to call back to return to previous mode
   const back = () => {
